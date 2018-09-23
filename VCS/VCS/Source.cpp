@@ -1,10 +1,16 @@
+#define WINDOWS /*uncomment this line to use it for windows*/
+#ifdef WINDOWS
 #include "dirent.h"
+#else
+#include <direct.h>
+#endif
+
 #include <iostream>
-#include <sys/types.h>
+#include <sys/types.h>		//requires sys/types & sys/stats to make files
+#include <sys/stat.h>
 #include <string>
 #include <stdlib.h>  
 #include <stdio.h> 
-#include <direct.h>
 using namespace std;
 
 void menu();
