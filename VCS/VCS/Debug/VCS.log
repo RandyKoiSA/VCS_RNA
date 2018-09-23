@@ -1,2 +1,4 @@
 ﻿  Source.cpp
+d:\user\randy_le\desktop\vcs_rna\vcs\vcs\source.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\user\randy_le\desktop\vcs_rna\vcs\vcs\source.cpp(13): warning C4101: 'choice': unreferenced local variable
   VCS.vcxproj -> D:\User\Randy_Le\Desktop\VCS_RNA\VCS\Debug\VCS.exe
