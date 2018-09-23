@@ -118,6 +118,7 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\um\Windows.h" />
     <ClInclude Include="dirent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

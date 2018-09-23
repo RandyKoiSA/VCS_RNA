@@ -1,4 +1,4 @@
-#include "dirent.h";
+#include "dirent.h"
 #include <iostream>
 #include <sys/types.h>
 #include <string>
@@ -8,27 +8,30 @@
 using namespace std;
 
 void menu();
-void viewptree(string src);
+void viewptree(struct dirent *sd, DIR *dir);
 int main(int argc, char* argv[]) {
 	int choice;
 	const string targetpath = "./repo";					//EDIT HERE FOR DESIRED TARGET PATH
 	const string sourcepath = "./ptree";				//EDIT HERE TO CHANGE SOURCE PATH
-	//do {
-	//	menu();
-	//	cin >> choice;
-	//	switch (choice) {
-	//	case 1:
-	//		break;
-	//	case 2:
-	//		viewptree(sourcepath);
-	//		break;
-	//	case 3:
-	//		break;
-	//	case 0:
-	//		exit;
-	//		break;
-	//	}
-	//} while (choice != 0);
+	struct dirent *sd = NULL;
+	DIR *dir = opendir(sourcepath.c_str());
+
+	do {
+		menu();
+		cin >> choice;
+		switch (choice) {
+		case 1:
+			break;
+		case 2:
+			viewptree(sd, dir);
+			break;
+		case 3:
+			break;
+		case 0:
+			exit;
+			break;
+		}
+	} while (choice != 0);
 
 	//We make the assumption that we know what files are in p tree;
 	//ofstream file1("./ptree/mypt/hx.txt");
@@ -47,13 +50,9 @@ int main(int argc, char* argv[]) {
 	//file1.close();
 	//file2.close();
 	//
-	DIR* sp = opendir(".");
-	string file;
-	while (sp != NULL) {
-		file = readdir(sp)->d_name;
-	}
-	cout << file;
+
 	cout << "creating repository";
+
 	_mkdir(targetpath.c_str());
 	return 0;
 }
@@ -65,7 +64,11 @@ void menu() {
 	cout << "\t0.Exit\n";
 }
 
-void viewptree(string src) { 
-
+void viewptree(struct dirent *sd, DIR *dir) { 
+	dir = opendir("./ptree");
+	if (dir == NULL) cout << "file does not exist\n";
+	while ((sd = readdir(dir)) != NULL) {
+		cout << sd->d_name << endl;
+	}
 }
 

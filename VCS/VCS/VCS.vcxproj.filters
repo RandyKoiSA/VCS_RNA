@@ -23,5 +23,8 @@
     <ClInclude Include="dirent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\um\Windows.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
