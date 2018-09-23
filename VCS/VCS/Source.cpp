@@ -1,8 +1,8 @@
-#define WINDOWS /*uncomment this line to use it for windows*/
+//#define WINDOWS /*uncomment this line to use it for windows*/
 #ifdef WINDOWS
 #include "dirent.h"
 #else
-#include <direct.h>
+#include <dirent.h>
 #endif
 
 #include <iostream>
@@ -56,10 +56,6 @@ int main(int argc, char* argv[]) {
 	//file1.close();
 	//file2.close();
 	//
-
-	cout << "creating repository";
-
-	_mkdir(targetpath.c_str());
 	return 0;
 }
 
