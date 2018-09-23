@@ -1,20 +1,25 @@
-//#define WINDOWS /*uncomment this line to use it for windows*/
+#define WINDOWS				/*uncomment this line to use it for windows*/
 #ifdef WINDOWS
 #include "dirent.h"
+#include <direct.h>
 #else
 #include <dirent.h>
+#include <unistd.h>
 #endif
 
+#include <sys/types.h>		//required to make files
+#include <sys/stat.h>		//required to make files
 #include <iostream>
-#include <sys/types.h>		//requires sys/types & sys/stats to make files
-#include <sys/stat.h>
 #include <string>
 #include <stdlib.h>  
 #include <stdio.h> 
+
 using namespace std;
 
 void menu();
 void viewptree(struct dirent *sd, DIR *dir);
+void createrepo(string tp);
+
 int main(int argc, char* argv[]) {
 	int choice;
 	const string targetpath = "./repo";					//EDIT HERE FOR DESIRED TARGET PATH
@@ -27,6 +32,7 @@ int main(int argc, char* argv[]) {
 		cin >> choice;
 		switch (choice) {
 		case 1:
+			createrepo(targetpath);
 			break;
 		case 2:
 			viewptree(sd, dir);
@@ -39,23 +45,6 @@ int main(int argc, char* argv[]) {
 		}
 	} while (choice != 0);
 
-	//We make the assumption that we know what files are in p tree;
-	//ofstream file1("./ptree/mypt/hx.txt");
-	//ofstream file2("hx.txt");
-	//TESTING IF FILES OPEN
-	//if (!file1) cout << "failed to open file 1\n";
-	//else cout << "opened file 1\n";
-	//if (!file2) cout << "failed to open file 2\n";
-	//else cout << "opened file 2\n";
-	//if (file1.is_open()) {
-	//	file1 << "this file works\n";
-	//}
-	//if (file2.is_open()) {
-	//	file2 << "this file works\n";
-	//}
-	//file1.close();
-	//file2.close();
-	//
 	return 0;
 }
 
@@ -68,9 +57,21 @@ void menu() {
 
 void viewptree(struct dirent *sd, DIR *dir) { 
 	dir = opendir("./ptree");
+	cout << "======================================\n";
 	if (dir == NULL) cout << "file does not exist\n";
+
 	while ((sd = readdir(dir)) != NULL) {
 		cout << sd->d_name << endl;
 	}
+	cout << "======================================\n";
+
+	closedir(dir);
 }
 
+void createrepo(string tp) {
+#if defined(_WIN32)
+	_mkdir(tp.c_str());
+#else
+	mkdir(tp.c_str());
+#endif
+}
