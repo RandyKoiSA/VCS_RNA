@@ -1,4 +1,4 @@
-#define WINDOWS				/*uncomment this line to use it for windows*/
+//#define WINDOWS				/*uncomment this line to use it for windows*/
 #ifdef WINDOWS
 #include "dirent.h"
 #include <direct.h>
@@ -72,6 +72,6 @@ void createrepo(string tp) {
 #if defined(_WIN32)
 	_mkdir(tp.c_str());
 #else
-	mkdir(tp.c_str());
+	mkdir(tp.c_str(), 0777);
 #endif
 }
