@@ -1,3 +1,2 @@
 ﻿  Source.cpp
-d:\user\randy_le\desktop\vcs_rna\vcs\vcs\source.cpp(44): warning C4551: function call missing argument list
-  VCS.vcxproj -> D:\User\Randy_Le\Desktop\VCS_RNA\VCS\Debug\VCS.exe
+d:\user\randy_le\desktop\vcs_rna\vcs\vcs\source.cpp(6): fatal error C1083: Cannot open include file: 'dirent.h': No such file or directory
