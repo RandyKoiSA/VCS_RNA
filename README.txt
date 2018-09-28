@@ -9,6 +9,8 @@ Team Name: RNA
 members: Randy Le, Nathan, Alex;
 
 Intro:
+	This project is a basic Version Control System that created a new repository with the target path files. 
+	We create an "artifact" file so we can have all version of the file that were changed.
 
 Contents:
 	dirent.h
@@ -39,4 +41,6 @@ Features (both included and missing)
 There is a feature that prints all the file in the source target.
 
 We have not made a Manifest or metadata file yet.
+
 Bugs (if any):
+	Having trouble create all the content in the ptree -> repo
