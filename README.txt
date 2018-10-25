@@ -6,7 +6,7 @@ Email: 97randy.le@gmail.com,
 
 Team Name: RNA
 
-members: Randy Le, Nathan, Alex;
+members: Randy Le, Nathan, Alex Liang, Dom;
 
 Intro:
 	This project is a basic Version Control System that created a new repository with the target path files. 
