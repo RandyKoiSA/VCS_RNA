@@ -6,7 +6,7 @@ Team Name: RNA
 Name: Randy Le, 97randy.le@gmail.com
       Nathan Richards, <email:>		
       Alex Liao, ycl@csu.fullerton.edu
-      Dom, <email:>
+      Dom Feeley, <email:>
 
 Intro:
 	This project is a basic Version Control System that created a new repository with the target path files. 
