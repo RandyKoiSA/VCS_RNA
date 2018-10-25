@@ -7,7 +7,7 @@ CPSC 362: Software Engineering
 	A Version Control System using Boost C++ Libraries for CPSC 362: Software Engineering Class using UNIX.
 	We are implementing a "create repo", "check in", and "check out" feature. 
 	
-## Team RNAD members
+## Team RNA members
 Randy Le: 97Randy.le@gmail.com
 Alex Liao:
 Nathan:
