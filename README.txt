@@ -1,12 +1,12 @@
-Class Name: CPSC 362 Software Engineering
+A description text file of the workings of VCS project2.
 
-Name: Randy Le, Nathan, Alex;
-
-Email: 97randy.le@gmail.com, 
+CPSC 362 Software Engineering Project #2: Check-out & Check-in.
 
 Team Name: RNA
-
-members: Randy Le, Nathan, Alex Liang, Dom;
+Name: Randy Le, 97randy.le@gmail.com
+      Nathan Richards, <email:>		
+      Alex Liao, ycl@csu.fullerton.edu
+      Dom, <email:>
 
 Intro:
 	This project is a basic Version Control System that created a new repository with the target path files. 
