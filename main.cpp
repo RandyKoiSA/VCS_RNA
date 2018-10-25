@@ -1,7 +1,7 @@
 //  Core program functionalities and properties.
 //  Modify above line of description for every file modification.
 //  main.cpp
-//  Created by Alex Liao on 2018/9/26.
+//  Created by Alex Liao, Randy Le, Nathan, and Dom Feeley on 2018/9/26.
 //
 //
 
