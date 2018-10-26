@@ -33,10 +33,14 @@ For UNIX:
 Make sure the boost file is at its default directory (usually /usr/local/boost-1.67.0)
 
 run the command:
+```
 	$ g++ -std=c++17 -I /usr/local/boost-1.67.0/include -L /usr/local/boost-1.67.0/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
+```
 	
 if your boost file is located somewhere else then use this code:
+```
 	$ g++ -std=c++17 -I [boostdir]/include -L [boostdir]/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
+```
 where [boostdir] is your boost directory location.
 
 ## Bugs	
