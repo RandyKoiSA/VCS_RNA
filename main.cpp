@@ -19,24 +19,37 @@ using namespace boost::filesystem;
 
 boost::filesystem::fstream fileOp;
 
+/**
+Menu Options
+*/
 const string cmdList[] = {"Exit", "View Project Source Directory", "View Project Repo Directory",
                           "Create Project Repository", "Project Check-Out", "Project Check-In"};
 
 ptime invalidTime = time_from_string("1900-01-01 08:00:00");
 
-struct ArgList {
-  int cmd = -1;
-  ptime cmdTime, repoTime;
-  string filePath = "", manifestPath = "", desc = "";
-};
-
+/**
+Pre-initialize Methods
+*/
 void menu();
 void viewDirectory(path);
 void updateManifest(ArgList&);
 stringstream fileReader(path, ArgList&);
 void createRepo(path, path, ArgList&);
 
+/**
+Arglist struct
+grabs detail of command executed and add it into the manifest file.
+*/
+struct ArgList {
+  int cmd = -1;
+  ptime cmdTime, repoTime;
+  string filePath = "", manifestPath = "", desc = "";
+};
 
+
+/**
+Main Method
+*/
 int main(int argc, const char * argv[])
 {
   int choice, forks = 0;
@@ -52,11 +65,13 @@ int main(int argc, const char * argv[])
   do {
     menu();
     cin >> choice;
+	
     // Get current date & time
     cmdTime = second_clock::local_time();
     args.cmdTime = cmdTime;
     args.cmd = choice;
     args.manifestPath = projectPath.string() + "/Manifest.txt";
+	
     switch (choice) {
       case 1:
         viewDirectory(projectPath);   // View source
@@ -76,7 +91,9 @@ int main(int argc, const char * argv[])
   return 0;
 } // End of Main()
 
-
+/**
+Menu Method
+*/
 void menu()
 {
   cout << "===============VCS CLI===============\n"
@@ -87,9 +104,12 @@ void menu()
        << "\t5. " << cmdList[5] << endl
        << "\t0. " << cmdList[0] << endl
        << "\tEnter choice: ";
-} // End of menu()
+}
 
-
+/**
+viewDirectory Method
+@param 	path stores the a directory path
+*/
 void viewDirectory(path path)
 {
   // Print the content of the directory
@@ -97,9 +117,14 @@ void viewDirectory(path path)
   {
     cout << entry << endl;
   }
-} // End of viewDirectory(..)
+}
 
 
+/*
+updateManifest Method
+
+@param args stores action executed
+*/
 void updateManifest(ArgList& args)
 {
   fileOp.open(args.manifestPath, ios::out | ios::app);
@@ -118,9 +143,15 @@ void updateManifest(ArgList& args)
     fileOp << "File: " << args.desc << " @ path: " << args.filePath << "\n";
   }
   fileOp.close();
-} // End of updateManifest(..)
+} 
 
 
+/*
+fileReader Method
+
+@param target
+@param args
+*/
 stringstream fileReader(path target, ArgList& args)
 {
   stringstream strStream;
@@ -148,15 +179,23 @@ stringstream fileReader(path target, ArgList& args)
   args.filePath = relative.string();
   updateManifest(args);
   return strStream;
-} // End of fileReader(..)
+}
 
+/*
+createRepo Method
+
+@param src
+@param target
+@param args
+*/
 void createRepo(path src, path target, ArgList& args)
 {
   if (exists(target))
   {
     cout << "The file/ folder already exists! Command not logged!" << endl;
     return;
-  } else {
+  } else
+  {
     cout << "target: " << target << endl;
     create_directory(target);
   }
@@ -172,4 +211,4 @@ void createRepo(path src, path target, ArgList& args)
       stringstream strStream = fileReader(target / entry.path().filename(), args);
     }
   }
-} // End createRepo(..)
+}
