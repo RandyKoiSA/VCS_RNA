@@ -22,18 +22,9 @@ External Requirements:
 	required to have g++ or any IDE that can compile C++ code
 
 Setup and Installation:
-	FOR WINDOW USERS
-
--make sure to uncomment "#include WINDOWS" the first line of code that defines Window:
--When compiling with windows make sure to include dirent.h
-
-	FOR LINUX USERS
-
--make sure to comment out "#include WINDOWS" at the first line of code
--first we create a output file
-	$g++ -o source Source.cpp
--next, we can execute the output file
-	$./source
+For UNIX:
+run the code:
+	$ g++ -std=c++17 -I /usr/local/boost-1.67.0/include -L /usr/local/boost-1.67.0/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
 
 Sample invocation & results to see:
 
