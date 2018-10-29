@@ -14,7 +14,7 @@ Alex Liao: ycl@csu.fullerton.edu
 
 Nathan: <email>
 
-Dom: <email>
+Dom Feeley: feeley.dominik@csu.fullerton.edu
 
 ## Features
 
