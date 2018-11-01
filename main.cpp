@@ -18,7 +18,7 @@ using namespace boost::filesystem;
 boost::filesystem::fstream fileOp;
 
 const string cmdList[] = {"Exit", "View Project Source Directory", "View Project Repo Directory",
-  "Create Project Repository", "Project Check-Out", "Project Check-In"};
+                          "Create Project Repository", "Project Check-Out", "Project Check-In"};
 
 ptime invalidTime = time_from_string("1900-01-01 08:00:00");
 
