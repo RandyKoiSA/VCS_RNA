@@ -16,31 +16,44 @@ Nathan: <email>
 
 Dom Feeley: feeley.dominik@csu.fullerton.edu
 
-## Features
-
-## Contents
-	copydir.h 	
-	main.cpp
-	ptree
-	README.txt
-
 ## External Requirements
-	required to have g++ that support and compile c++17.
-	required to have boost c++ libraries: date_time, filesystem, and system to be installed.
+	- required to have g++ that support and compile c++17.
+	- required to have boost c++ libraries: date_time, filesystem, and system.
+
+## Features
+	-View current working directory
+	-List out files in current working directory
+	-Create a repository of "ptree"
+	-Check-in
+	-Check-out
+## Contents
+	main.cpp
+	ptree (folder)
+	libboost_date_time.dylib 	(library)
+	libboost_filesystem.dylib 	(library)
+	libboost_system.dylib 		(library)
+	README.txt
+	README.md
 
 ## Setup and Installation for UNIX
-For UNIX:
-Make sure the boost file is at its default directory (usually /usr/local/boost-1.67.0)
+	- Make sure the boost file is at its default directory 
+		(usually 	/usr/local/boost-1.67.0)
 
-run the command:
+Run the command:
 ```
-	$ g++ -std=c++17 -I /usr/local/boost-1.67.0/include -L /usr/local/boost-1.67.0/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
+	$ g++ -std=c++17 -I /usr/local/boost_1_67_0 -L /usr/local/boost_1_67_0/stage/lib main.cpp -o rnavcs -lboost_system -lboost_filesystem -lboost_date_time
 ```
-	
-if your boost file is located somewhere else then use this code:
+If your boost file is located somewhere else then use the following as a format. Change the INCLUDE file destination (-I) and LIBRARY file destination (-L):
 ```
-	$ g++ -std=c++17 -I [boostdir]/include -L [boostdir]/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
+	$ g++ -std=c++17 -I [boostdir] -L [boostdir]/stage/lib main.cpp -o rnavcs -lboost_system -lboost_filesystem -lboost_date_time
 ```
 where [boostdir] is your boost directory location.
+
+After successfully running the code, you will have a new executable code name "rnavcs". Run the command:
+```
+	$ ./rnavcs
+```
+
+## Setup and Installation for Mac OS
 
 ## Bugs	

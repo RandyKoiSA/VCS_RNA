@@ -1,37 +1,44 @@
-A description text file of the workings of VCS project2.
-
-CPSC 362 Software Engineering Project #2: Check-out & Check-in.
-
-Team Name: RNA
-Name: Randy Le, 97randy.le@gmail.com
-      Nathan Richards, <email:>		
-      Alex Liao, ycl@csu.fullerton.edu
-      Dom Feeley, <email:>
-
-Intro:
-	This project is a basic Version Control System that created a new repository with the target path files. 
-	We create an "artifact" file so we can have all version of the file that were changed.
-
-Contents:
-	dirent.h
-	Source.cpp
-	ptree
-	repo
-	README.txt
+Project: 	Version Control System (VCS)
+Class Number: 	CPSC 362: Software Engineering
+About:
+	A Version Control System using Boost C++ Libraries for CPSC 362: Software Engineering Class using UNIX. We are implementing a "create repo", "check in", and "check out" feature. 
+Group-Name: 	RNA
+Team-Members: 	Randy Le:	97Randy.le@gmail.com
+		Alex Liao: 	ycl@csu.fullerton.edu
+		Nathan: 	<email>
+		Dom Feeley: 	feeley.dominik@csu.fullerton.edu
 External Requirements:
-	required to have g++ or any IDE that can compile C++ code
+		-Required to have g++ that supports c++17
+		-Required to have boost c++ libraries: date_time, filesystem, and system.
+Features:
+		-View current working directory
+		-List out files in current working directory
+		-Create a repository of "ptree"
+		-Check-in
+		-Check-out
+Contents:
+	main.cpp
+	ptree (folder)
+	libboost_date_time.dylib 	(library)
+	libboost_filesystem.dylib 	(library)
+	libboost_system.dylib 		(library)
+	README.txt
+	README.md
+Setup and Installation for UNIX:
+	Make sure the boost file is at its default directory 
+	(usually 	/usr/local/boost-1.67.0)
 
-Setup and Installation:
-For UNIX:
-run the code:
-	$ g++ -std=c++17 -I /usr/local/boost-1.67.0/include -L /usr/local/boost-1.67.0/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
+	Run the command:
+		$ g++ -std=c++17 -I /usr/local/boost_1_67_0 -L /usr/local/boost_1_67_0/stage/lib main.cpp -o rnavcs -lboost_system -lboost_filesystem -lboost_date_time
 
-Sample invocation & results to see:
+	If your boost file is located somewhere else then use the following as a format. Change the INCLUDE file destination (-I) and LIBRARY file destination (-L):
+		$ g++ -std=c++17 -I [boostdir] -L [boostdir]/stage/lib main.cpp -o rnavcs -lboost_system -lboost_filesystem -lboost_date_time
 
-Features (both included and missing)
-There is a feature that prints all the file in the source target.
+	where [boostdir] is your boost directory location.
 
-We have not made a Manifest or metadata file yet.
+	After successfully running the code, you will have a new executable code name "rnavcs". Run the command:
+		$ ./rnavcs
 
-Bugs (if any):
-	Having trouble create all the content in the ptree -> repo
+Setup and Installation for Mac OS:
+	
+Bugs:
