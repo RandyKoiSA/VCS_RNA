@@ -22,15 +22,15 @@ Nathan: nathrich23@csu.fullerton.edu
 Dom Feeley: feeley.dominik@csu.fullerton.edu
 
 ## External Requirements
-	- required to have g++ that support and compile c++17.
-	- required to have boost c++ libraries: date_time, filesystem, and system.
+	required to have g++ that support and compile c++17.
+	required to have boost c++ libraries: date_time, filesystem, and system.
 
 ## Features
-	-View current working directory
-	-List out files in current working directory
-	-Create a repository of "ptree"
-	-Check-in
-	-Check-out
+	View current working directory
+	List out files in current working directory
+	Create a repository of "ptree"
+	Check-in
+	Check-out
 ## Contents
 	main.cpp
 	ptree (folder)
@@ -44,9 +44,9 @@ Dom Feeley: feeley.dominik@csu.fullerton.edu
 	README.md
 
 ## Setup and Installation for UNIX
-	- Make sure the boost file is at its default directory.
+	Make sure the boost file is at its default directory.
 		(usually 	/usr/local/boost-1.67.0)
-	- Make sure to know where the boost libraries are.
+	Make sure to know where the boost libraries are.
 
 Run the command:
 ```
@@ -66,9 +66,9 @@ After successfully running the command, you will have a new executable file in t
 ```
 
 ## Setup and Installation for Mac OS
-	- Make sure the boost file is at its default directory.
+	Make sure the boost file is at its default directory.
 		(usually [])
-	- Make sure to know where the boost libraries are.
+	Make sure to know where the boost libraries are.
 Run the command:
 ```
 	$ g++ -std=c++17 -l/usr/local/boost-1.67.0/include -L /usr/local/boost-1.67.0/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
