@@ -52,48 +52,55 @@
 |	README.md							 |
 +========================================================================+
 
-+==================================+
-|Setup and Installation for UNIX:  |
-+==================================+
-Make sure the boost file is at its default directory 
-(usually 	/usr/local/boost-1.67.0)
++=======================================================+
+|Setup and Installation for UNIX:  			|
++-------------------------------------------------------+
+| Make sure the boost file is at its default directory  |
+| (usually 	/usr/local/boost-1.67.0)                |
++=======================================================+
 
-Run the command:
-+-----------------------------------+
++============================================================================================================================+
+| Run the command:                                                                                                           |
++----------------------------------------------------------------------------------------------------------------------------+
 $ g++ -std=c++17 -I /usr/local/boost_1_67_0/ -L /usr/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
-+-----------------------------------+
++============================================================================================================================+
 
-
-If your boost file is located somewhere else then use the following as a 
-format. Change the INCLUDE file destination (-I) and LIBRARY file destination (-L):
-+-----------------------------------+
++===============================================================================================================+
+| If your boost file is located somewhere else then use the following as a                                      |
+| format. Change the INCLUDE file destination (-I) and LIBRARY file destination (-L):                           |
++---------------------------------------------------------------------------------------------------------------+
 $ g++ -std=c++17 -I [boostdir] -L /usr/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
-+-----------------------------------+
-where [boostdir] is your boost directory location.
-
-
-After successfully running the command, you will have a new executable file in the folder called "main". Run the command:
-+-----------------------------------+
-		$ ./main
-+-----------------------------------+
-
-+==================================+
-|Setup and Installation for Mac OS:|
-+==================================+
-Make sure the boost file is at its default directory.
-Make sure to know where the boost libraries are.
-
-Run the command:
-+-----------------------------------+
-$ g++ -std=c++17 -l/usr/local/boost-1.67.0/include -L /usr/local/boost-1.67.0/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
-+-----------------------------------+
-
-
-After successfully running the command, you will have a new executable file in the folder called "main". Run the command:
-+-----------------------------------+
-$ ./main
-+-----------------------------------+
+                                                                                                               
+| where [boostdir] is your boost directory location.                                                            |
++===============================================================================================================+
 
 +========================================================================+
-|Bugs:									 |
+| After successfully running the command, you will have a new executable |
+| file in the folder called "main". Run the command:                     |
++------------------------------------------------------------------------+
+		$ ./main                                                 
++========================================================================+
+
++======================================================+
+|Setup and Installation for Mac OS:                    |
++------------------------------------------------------+
+| Make sure the boost file is at its default directory.|
+| Make sure to know where the boost libraries are.     |
++======================================================+
+
++===================================================================================================================+
+| Run the command:                                                                                                  |
++-------------------------------------------------------------------------------------------------------------------+
+$ g++ -std=c++17 -l/usr/local/boost-1.67.0/include -L /usr/local/boost-1.67.0/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
++===================================================================================================================+
+
++===========================================================================+
+| After successfully running the command, you will have a new executable    |
+| file in the folder called "main". Run the command:                        |
++---------------------------------------------------------------------------+
+                                $ ./main
++===========================================================================+
+
++========================================================================+
+|Bugs:	None as of yet           					 |
 +========================================================================+
