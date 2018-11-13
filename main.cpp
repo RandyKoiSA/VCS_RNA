@@ -1,4 +1,4 @@
-//Core program functionalities and properties.
+//  Core program functionalities and properties.
 //  Modify above line of description for every file modification.
 //  main.cpp
 //  Created by Alex Liao, Randy Le, Nathan Richards, and Dom Feeley on 2018/9/26.
@@ -39,7 +39,8 @@ void viewDirectory(path);
 void updateManifest(ArgList&);
 stringstream fileReader(path, ArgList&);
 void createRepo(path, path, ArgList&);
-string makeID(stringstream&);
+string makeID(string);
+void projectMerger(path, path);
 
 /*
  Main Method
@@ -55,6 +56,7 @@ int main(int argc, const char * argv[])
   auto projectPath = current_path();
   // Edit for Windows directory format: ' \ '
   path REPO_PATH("../Project_Repo");
+  path ckOutPath;
   
   do {
     menu();
@@ -80,9 +82,22 @@ int main(int argc, const char * argv[])
                   boost::filesystem::detail::overwrite_if_exists);
         break;
       case 4:
+        ckOutPath = REPO_PATH /".."/ "VCS_Proj_Fork" += to_string(forks += 1);
         args.manifestPath = REPO_PATH.string() + "/Manifest.txt";
         updateManifest(args);
-        createRepo(REPO_PATH, REPO_PATH /".."/ "VCS_Proj_Fork" += to_string(forks += 1), args);
+        createRepo(REPO_PATH, ckOutPath, args);
+        copy_file(args.manifestPath, ckOutPath.string() + "/Manifest.txt",
+                  boost::filesystem::detail::overwrite_if_exists);
+        break;
+      case 5:
+        path ckInPath(REPO_PATH /".."/ "VCS_Proj_CheckIn");
+        args.manifestPath = ckOutPath.string() + "/Manifest.txt";
+        updateManifest(args);
+        createRepo(ckOutPath, ckInPath, args);
+        copy_file(args.manifestPath, ckInPath.string() + "/Manifest.txt",
+                  boost::filesystem::detail::overwrite_if_exists);
+        projectMerger(ckInPath, REPO_PATH);
+        remove_all(ckInPath);
         break;
     }
   } while (choice != 0);
@@ -133,10 +148,7 @@ void updateManifest(ArgList& args)
   }
   else {
     cout << "desc: " << args.desc << endl;
-    if (!fileOp.is_open()) {
-      cout << "not open\n";
-      cout << "args.path: " << args.filePath << endl;
-    }
+    if (!fileOp.is_open()) { cout << "not open\n"; }
     fileOp << "   File » " << args.desc << " @ path = " << args.filePath << "\n";
   }
   fileOp.close();
@@ -163,10 +175,10 @@ stringstream fileReader(path target, ArgList& args)
     
     if (!fileOp.is_open()) { cout << "Failed to open file!\n"; }
     
-    while(fileOp >> strStream.rdbuf());
-    
     getline(strStream, desc);
     args.desc = target.filename().string() + ": " + desc;
+    
+    while(fileOp >> strStream.rdbuf());
     
     fileOp.close();
   }
@@ -176,28 +188,54 @@ stringstream fileReader(path target, ArgList& args)
 
 /*
  makeID
- @param stringstream &stream
+ @param stream: string
 */
-string makeID(stringstream& stream)
+string makeID(string str)
 {
   int ckSum = 0, counter = 0;
-  for (int ix = 0; ix != stream.str().size(); ++ix)
+  for (int ix = 0; ix != str.size(); ++ix)
   {
-    ckSum += int(stream.str()[ix]) * multiplier[counter];
+    ckSum += int(str[ix]) * multiplier[counter];
     ++counter;
     if (5 == counter) { counter = 0; }
   }
-  string id = to_string(ckSum) + "-L" + to_string(stream.str().size());
+  string id = to_string(ckSum) + "-L" + to_string(str.size());
   // <Missing: modulus operation on over sized cksum>
   return id;
 } // End of makeID(.)
 
 
 /*
+ projectMerger Method
+ @param src: path - check-in folder
+ @param target: path - project repo folder
+*/
+void projectMerger(path src, path target)
+{
+  if(!exists(src)) { cout << "Source folder does not exists!\n"; return; }
+  for (auto &entry : directory_iterator(src))
+  {
+    if (is_directory(entry))
+    {
+      projectMerger(entry, target/entry.path().filename());
+    }
+    if ( is_regular(entry) && "Manifest.txt" != entry.path().filename() &&
+       (".cpp" == entry.path().filename().extension() || "txt" == entry.path().filename().extension()) )
+    {
+      if (target/entry.path().filename() != entry.path().filename())
+      {
+        copy_file(entry, target / entry.path().filename(), boost::filesystem::detail::overwrite_if_exists);
+      }
+    }
+  }
+}
+
+
+/*
  createRepo Method
- @param src
- @param target
- @param args
+ @param src: path
+ @param target: path
+ @param args: ArgList struct
 */
 void createRepo(path src, path target, ArgList& args)
 {
@@ -208,7 +246,6 @@ void createRepo(path src, path target, ArgList& args)
   }
   else
   {
-    cout << "target: " << target << endl;
     create_directory(target);
   }
   for(auto &entry : directory_iterator(src))
@@ -220,7 +257,7 @@ void createRepo(path src, path target, ArgList& args)
     if (is_regular_file(entry) && entry.path().filename() != ".DS_Store")
     {
       path relative;
-      cout << "is file, path: " << target / entry.path().filename() << endl;
+      // cout << "is file, path: " << target / entry.path().filename() << endl;
       
       if (invalidTime != args.cmdTime)
       {
@@ -231,22 +268,28 @@ void createRepo(path src, path target, ArgList& args)
       {
         stringstream strStream;
         string id;
+        path leave;
         switch (args.cmd) {
-          case 4:
-            copy_file(entry, target / entry.path().filename());
-            break;
           case 3:
-          case 5:
             strStream = fileReader(entry, args);
-            //strStream = fileReader(target / entry.path().filename(), args);
-            id = makeID(strStream);
+            id = makeID(strStream.str());
             id += entry.path().extension().string();
-            cout << "id w/ ext.: " << id << endl;
-            path leave = target / entry.path().filename();
+            leave = target / entry.path().filename();
             create_directory(leave);
             fileOp.open(leave.string() / id, ios::out | ios::app);
             fileOp << strStream.rdbuf();
             fileOp.close();
+            break;
+          case 4:
+          case 5:
+            copy_file(entry, target / entry.path().filename());
+            if (5 == args.cmd)
+            {
+              strStream = fileReader(entry, args);
+              id = makeID(strStream.str());
+              id += entry.path().extension().string();
+              rename(target / entry.path().filename(), target / id);
+            }
             break;
         }
       }
@@ -259,6 +302,6 @@ void createRepo(path src, path target, ArgList& args)
       args.filePath = relative.string();
       updateManifest(args);
     }
-    
   }
 } // End of createRepo(...)
+
