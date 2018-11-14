@@ -4,7 +4,7 @@
 +===============================================================================+
 
 +===============================================================================+
-|About:										|
+|About										|
 |A Version Control System using Boost C++ Libraries for CPSC 362: 		|
 |Software Engineering Class using UNIX. This version control system will	|
 |create a repository from an existing project folder. We then implemented	|
@@ -19,12 +19,12 @@
 |Team-Members:									|
 |	Randy Le:	97Randy.le@gmail.com			 		|
 |	Alex Liao: 	ycl@csu.fullerton.edu			 		|
-|	Nathan: 	nathrich@csu.fullerton.edu		 	|
-|	Dom Feeley: 	feeley.dominik@csu.fullerton.edu	 	|
+|	Nathan: 	nathrich@csu.fullerton.edu			 	|
+|	Dom Feeley: 	feeley.dominik@csu.fullerton.edu		 	|
 +===============================================================================+
 
 +===============================================================================+
-|External Requirements:								|
+|External Requirements								|
 |	-Required to have g++ that supports c++17		 	 	|
 |	-Required to have boost c++ libraries: date_time, filesystem, 	 	|
 |	 and system.							 	|
