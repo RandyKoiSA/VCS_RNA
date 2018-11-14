@@ -1,5 +1,5 @@
 +==============+================================================================+
-|Project       |           Version Control System (VCS)	                	|
+|Project       |           Version Control System (VCS)				|
 |Class Number  |          CPSC 362: Software Engineering	        	|
 +===============================================================================+
 
@@ -29,83 +29,88 @@
 |	 and system.							 	|
 +===============================================================================+
 
-+========================================================================+
-|Features:								 |
-|		-View current working directory				 |
-|		-List out files in current working directory		 |
-|		-Create a repository of "ptree"				 |
-|		-Check-in						 |
-|		-Check-out						 |
-+========================================================================+
++===============================================================================+
+|Features:									|
+|		-View current working directory					|
+|		-List out files in current working directory			|
+|		-Create a repository of "ptree"					|
+|		-Check-in							|
+|		-Check-out							|
++===============================================================================+
 
-+========================================================================+
-|Contents:								 |
-|	main.cpp							 |
-|	ptree (folder)							 |
-|	libboost_date_time.dylib 	(MAC OS library)		 |
-|	libboost_filesystem.dylib 	(MAC OS library)  		 |
-|	libboost_system.dylib 		(MAC OS library)		 |
-|	libboost_date_time.so.1.67.0 	(LINUX OS library)		 |
-|	libboost_filesystem.so.1.67.0 	(LINUX OS library)  		 |
-|	libboost_system.so.1.67.0 	(LINUX OS library)		 |
-|	README.txt							 |
-|	README.md							 |
-+========================================================================+
++===============================================================================+
+|Contents:									|
+|	main.cpp								|
+|	ptree (folder)								|
+|	libboost_date_time.dylib 	(MAC OS library)			|
+|	libboost_filesystem.dylib 	(MAC OS library)			|
+|	libboost_system.dylib 		(MAC OS library)			|
+|	libboost_date_time.so.1.67.0 	(LINUX OS library)			|
+|	libboost_filesystem.so.1.67.0 	(LINUX OS library)			|
+|	libboost_system.so.1.67.0 	(LINUX OS library)			|
+|	README.txt								|
+|	README.md								|
++===============================================================================+
 
-+=======================================================+
-|Setup and Installation for UNIX:			|
-+-------------------------------------------------------+
-| Make sure the boost file is at its default directory  |
-| (usually 	/usr/local/boost-1.67.0)                |
-+=======================================================+
++===============================================================================+
+|Setup and Installation for UNIX:						|
++-------------------------------------------------------------------------------+
+| Make sure the boost file is at its default directory				|
+| (usually 	/usr/local/boost-1.67.0)					|
++===============================================================================+
 
-+============================================================================================================================+
-| Run the command: Replace x.xx.x or x_xx_x with your Boost version.                                                         |
-+----------------------------------------------------------------------------------------------------------------------------+
++===============================================================================+
+| Run the command: Replace x.xx.x or x_xx_x with your Boost version.		|
++-------------------------------------------------------------------------------+
 Linux:
 $ g++ -std=c++17 -I /usr/local/boost_x_xx_x/ -L /usr/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
 or
 $ g++ -std=c++17 -I /usr/local/boost_x_xx_x/ -L ./ main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
-+============================================================================================================================+
++===============================================================================+
 
-+===============================================================================================================+
-| If your boost file is located somewhere else then use the following as a                                      |
-| format. Change the INCLUDE file destination (-I) and LIBRARY file destination (-L):                           |
-+---------------------------------------------------------------------------------------------------------------+
++===============================================================================+
+| If your boost file is located somewhere else then use the following as a	|
+| format. Change the INCLUDE file destination (-I)				|
+| and LIBRARY file destination (-L):						|
++-------------------------------------------------------------------------------+
 	$ g++ -std=c++17 -I [boostdir] -L /usr/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
 |                                                                                                               
-| where [boostdir] is your boost directory location.                                                            |
-+===============================================================================================================+
+| where [boostdir] is your boost directory location.				|
++===============================================================================+
 
-+========================================================================+
-| After successfully running the command, you will have a new executable |
-| file in the folder called "main". Run the command:                     |
-+------------------------------------------------------------------------+
++===============================================================================+
+| After successfully running the command, you will have a new executable	|
+| file in the folder called "main". Run the command:				|
++-------------------------------------------------------------------------------+
 	$ ./main                                                 
-+========================================================================+
++===============================================================================+
 
-+======================================================+
-|Setup and Installation for Mac OS:                    |	
-+------------------------------------------------------+	
-| Make sure the boost file is at its default directory.|	
-| Make sure to know where the boost libraries are.     |	
-+======================================================+	
++===============================================================================+
+|Setup and Installation for Mac OS:						|	
++-------------------------------------------------------------------------------+	
+| Make sure the boost file is at its default directory.				|	
+| Make sure to know where the boost libraries are.				|	
++===============================================================================+	
 
- +===================================================================================================================+	
-| Run the command: Replace x.xx.x or x_xx_x with your Boost version.     					     |                    |	
-+-------------------------------------------------------------------------------------------------------------------+	
+ +==============================================================================+	
+| Run the command: Replace x.xx.x or x_xx_x with your Boost version.		|	
++-------------------------------------------------------------------------------+	
 MacOS:
 	$ g++ -std=c++17 -I /usr/local/boost-x.xx.x/include -L /usr/local/boost-x.xx.x/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
-	
-+===================================================================================================================+	
+										|
++===============================================================================+	
 
-+===========================================================================+	
-| After successfully running the command, you will have a new executable    |	
-| file in the folder called "main". Run the command:                        |	
-+---------------------------------------------------------------------------+	
++===============================================================================+	
+| After successfully running the command, you will have a new executable	|	
+| file in the folder called "main". Run the command:				|	
++-------------------------------------------------------------------------------+	
 	$ ./main	
-+===========================================================================+	
++===============================================================================+	
 
-+========================================================================+
-|Bugs:	None as of yet           					 |
-+========================================================================+
++===============================================================================+
+|Bugs:										|
++===============================================================================+
+| When initially starting the program, make sure that the command are executed	|
+| in order. So create repo, check-out, then check-in would be the order to	|
+| execute the program.								|
++===============================================================================+
