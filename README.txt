@@ -62,9 +62,6 @@
 +============================================================================================================================+
 | Run the command: Replace x.xx.x or x_xx_x with your Boost version.                                                         |
 +----------------------------------------------------------------------------------------------------------------------------+
-MacOS:
-$ g++ -std=c++17 -I /usr/local/boost-x.xx.x/include -L /usr/local/boost-x.xx.x/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
-
 Linux:
 $ g++ -std=c++17 -I /usr/local/boost_x_xx_x/ -L /usr/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
 or
@@ -75,8 +72,8 @@ $ g++ -std=c++17 -I /usr/local/boost_x_xx_x/ -L ./ main.cpp -o main -lboost_syst
 | If your boost file is located somewhere else then use the following as a                                      |
 | format. Change the INCLUDE file destination (-I) and LIBRARY file destination (-L):                           |
 +---------------------------------------------------------------------------------------------------------------+
-$ g++ -std=c++17 -I [boostdir] -L /usr/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
-                                                                                                               
+	$ g++ -std=c++17 -I [boostdir] -L /usr/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
+|                                                                                                               
 | where [boostdir] is your boost directory location.                                                            |
 +===============================================================================================================+
 
@@ -84,8 +81,30 @@ $ g++ -std=c++17 -I [boostdir] -L /usr/lib main.cpp -o main -lboost_system -lboo
 | After successfully running the command, you will have a new executable |
 | file in the folder called "main". Run the command:                     |
 +------------------------------------------------------------------------+
-		$ ./main                                                 
+	$ ./main                                                 
 +========================================================================+
+
++======================================================+
+|Setup and Installation for Mac OS:                    |	
++------------------------------------------------------+	
+| Make sure the boost file is at its default directory.|	
+| Make sure to know where the boost libraries are.     |	
++======================================================+	
+
+ +===================================================================================================================+	
+| Run the command: Replace x.xx.x or x_xx_x with your Boost version.                                                                                               |	
++-------------------------------------------------------------------------------------------------------------------+	
+MacOS:
+	$ g++ -std=c++17 -I /usr/local/boost-x.xx.x/include -L /usr/local/boost-x.xx.x/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
+	
++===================================================================================================================+	
+
++===========================================================================+	
+| After successfully running the command, you will have a new executable    |	
+| file in the folder called "main". Run the command:                        |	
++---------------------------------------------------------------------------+	
+	$ ./main	
++===========================================================================+	
 
 +========================================================================+
 |Bugs:	None as of yet           					 |
