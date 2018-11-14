@@ -60,13 +60,15 @@
 +=======================================================+
 
 +============================================================================================================================+
-| Run the command:                                                                                                           |
+| Run the command: Replace x.xx.x or x_xx_x with your Boost version.                                                         |
 +----------------------------------------------------------------------------------------------------------------------------+
-$ g++ -std=c++17 -I /usr/local/boost_1_67_0/ -L /usr/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
+MacOS:
+$ g++ -std=c++17 -I /usr/local/boost-x.xx.x/include -L /usr/local/boost-x.xx.x/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
 
+Linux:
+$ g++ -std=c++17 -I /usr/local/boost_x_xx_x/ -L /usr/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
 or
-
-$ g++ -std=c++17 -I /usr/local/boost_1_67_0/ -L ./ main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
+$ g++ -std=c++17 -I /usr/local/boost_x_xx_x/ -L ./ main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
 +============================================================================================================================+
 
 +===============================================================================================================+
