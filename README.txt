@@ -1,33 +1,33 @@
-+==============+=========================================================+
-|Project       |           Version Control System (VCS)	                 |
-|Class Number  |          CPSC 362: Software Engineering	         |
-+========================================================================+
++==============+================================================================+
+|Project       |           Version Control System (VCS)	                	|
+|Class Number  |          CPSC 362: Software Engineering	        	|
++===============================================================================+
 
-+========================================================================+
-|About:									 |
-|A Version Control System using Boost C++ Libraries for CPSC 362: 	 |
-|Software Engineering Class using UNIX. This version control system will |
-|create a repository from an existing project folder. We then implemented|
-|a feature called "check-out" which forks the created repository. We also|
-|have the "check-in" feature which merges the check-out repository to the|
-|created repository. We have extra features, such as printing working    |
-|directory and listing files from the working directory.		 |
-+========================================================================+
++===============================================================================+
+|About:										|
+|A Version Control System using Boost C++ Libraries for CPSC 362: 		|
+|Software Engineering Class using UNIX. This version control system will	|
+|create a repository from an existing project folder. We then implemented	|
+|a feature called "check-out" which forks the created repository. We also	|
+|have the "check-in" feature which merges the check-out repository to the	|
+|created repository. We have extra features, such as printing working    	|
+|directory and listing files from the working directory.		 	|
++===============================================================================+
 	
-+========================================================================+	
-|Group-Name: 	RNA							 |
-|Team-Members: 	Randy Le:	97Randy.le@gmail.com			 |
-|		Alex Liao: 	ycl@csu.fullerton.edu			 |
-|		Nathan: 	nathrich@csu.fullerton.edu		 |
-|		Dom Feeley: 	feeley.dominik@csu.fullerton.edu	 |
-+========================================================================+
++===============================================================================+	
+|Group-Name: 	RNA							 	|
+|Team-Members: 	Randy Le:	97Randy.le@gmail.com			 	|
+|		Alex Liao: 	ycl@csu.fullerton.edu			 	|
+|		Nathan: 	nathrich@csu.fullerton.edu		 	|
+|		Dom Feeley: 	feeley.dominik@csu.fullerton.edu	 	|
++===============================================================================+
 
-+========================================================================+
-|External Requirements:							 |
-|	-Required to have g++ that supports c++17		 	 |
-|	-Required to have boost c++ libraries: date_time, filesystem, 	 |
-|	 and system.							 |
-+========================================================================+
++===============================================================================+
+|External Requirements:							 	|
+|	-Required to have g++ that supports c++17		 	 	|
+|	-Required to have boost c++ libraries: date_time, filesystem, 	 	|
+|	 and system.							 	|
++===============================================================================+
 
 +========================================================================+
 |Features:								 |
@@ -53,7 +53,7 @@
 +========================================================================+
 
 +=======================================================+
-|Setup and Installation for UNIX / MAC OS:  			|
+|Setup and Installation for UNIX:			|
 +-------------------------------------------------------+
 | Make sure the boost file is at its default directory  |
 | (usually 	/usr/local/boost-1.67.0)                |
@@ -92,7 +92,7 @@ $ g++ -std=c++17 -I /usr/local/boost_x_xx_x/ -L ./ main.cpp -o main -lboost_syst
 +======================================================+	
 
  +===================================================================================================================+	
-| Run the command: Replace x.xx.x or x_xx_x with your Boost version.                                                                                               |	
+| Run the command: Replace x.xx.x or x_xx_x with your Boost version.     					     |                    |	
 +-------------------------------------------------------------------------------------------------------------------+	
 MacOS:
 	$ g++ -std=c++17 -I /usr/local/boost-x.xx.x/include -L /usr/local/boost-x.xx.x/lib main.cpp -o main -lboost_system -lboost_filesystem -lboost_date_time
