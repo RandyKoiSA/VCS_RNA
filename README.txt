@@ -16,14 +16,15 @@
 	
 +===============================================================================+	
 |Group-Name: 	RNA							 	|
-|Team-Members: 	Randy Le:	97Randy.le@gmail.com			 	|
-|		Alex Liao: 	ycl@csu.fullerton.edu			 	|
-|		Nathan: 	nathrich@csu.fullerton.edu		 	|
-|		Dom Feeley: 	feeley.dominik@csu.fullerton.edu	 	|
+|Team-Members:									|
+|	Randy Le:	97Randy.le@gmail.com			 		|
+|	Alex Liao: 	ycl@csu.fullerton.edu			 		|
+|	Nathan: 	nathrich@csu.fullerton.edu		 	|
+|	Dom Feeley: 	feeley.dominik@csu.fullerton.edu	 	|
 +===============================================================================+
 
 +===============================================================================+
-|External Requirements:							 	|
+|External Requirements:								|
 |	-Required to have g++ that supports c++17		 	 	|
 |	-Required to have boost c++ libraries: date_time, filesystem, 	 	|
 |	 and system.							 	|
