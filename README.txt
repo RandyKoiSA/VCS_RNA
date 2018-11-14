@@ -24,7 +24,7 @@
 +===============================================================================+
 
 +===============================================================================+
-|EXTERNAL REQUIREMENTS							|
+|EXTERNAL REQUIREMENTS								|
 |	-Required to have g++ that supports c++17		 	 	|
 |	-Required to have boost c++ libraries: date_time, filesystem, 	 	|
 |	 and system.							 	|
