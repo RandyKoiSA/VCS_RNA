@@ -1,6 +1,6 @@
 +==============+================================================================+
-|Project       |           Version Control System (VCS)				|
-|Class Number  |          CPSC 362: Software Engineering	        	|
+|Project       |	Version Control System (VCS)				|
+|Class Number  |	CPSC 362: Software Engineering	        		|
 +===============================================================================+
 
 +===============================================================================+
