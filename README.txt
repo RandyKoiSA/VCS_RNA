@@ -80,7 +80,7 @@ $ g++ -std=c++17 -I /usr/local/boost_x_xx_x/ -L ./ main.cpp -o main -lboost_syst
 +===============================================================================+
 
 +===============================================================================+
-|After successfully running the command, you will have a new executable		|
+|After successfully running the command, you will have a new executable 	|
 |file in the folder called "main". Run the command:				|
 +-------------------------------------------------------------------------------+
 	$ ./main                                                 
@@ -102,7 +102,7 @@ MacOS:
 +===============================================================================+	
 
 +===============================================================================+	
-|After successfully running the command, you will have a new executable		|	
+|After successfully running the command, you will have a new executable 	|	
 |file in the folder called "main". Run the command:				|	
 +-------------------------------------------------------------------------------+	
 	$ ./main	
