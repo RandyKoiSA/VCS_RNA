@@ -55,7 +55,7 @@ int main(int argc, const char * argv[])
   // Get the current directory -> project source directory
   auto projectPath = current_path();
   // Edit for Windows directory format: ' \ '
-  path REPO_PATH("../Project_Repo");
+  path REPO_PATH("../Project_Repo/RAND_VCS");
   path ckOutPath;
   
   do {
@@ -75,6 +75,7 @@ int main(int argc, const char * argv[])
         viewDirectory(REPO_PATH);   // View repo
         break;
       case 3:
+        create_directory("../Project_Repo");
         args.manifestPath = projectPath.string() + "/Manifest.txt";
         if (invalidTime != args.repoTime) { updateManifest(args); }
         createRepo(projectPath, REPO_PATH, args);
@@ -97,7 +98,7 @@ int main(int argc, const char * argv[])
         copy_file(args.manifestPath, ckInPath.string() + "/Manifest.txt",
                   boost::filesystem::detail::overwrite_if_exists);
         projectMerger(ckInPath, REPO_PATH);
-        remove_all(ckInPath);
+        //remove_all(ckInPath);
         break;
     }
   } while (choice != 0);
