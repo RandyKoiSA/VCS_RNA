@@ -4,12 +4,13 @@
 CPSC 362: Software Engineering
 
 ## About
-	A Version Control System using Boost C++ Libraries for CPSC 362: Software Engineering Class using UNIX.
-	This version control system will create a repository from an existing project folder. 
-	We then implemented a feature called "check-out" which forks the created repository.
-	We also have the "check-in" feature which merges the check-out repository to the created repository.
-	We have extra features, such as printing working directory and listing files from the working directory.
-	
+A Version Control System using Boost C++ Libraries for CPSC 362: Software Engineering Class using UNIX.
+This version control system will create a repository from an existing project folder. 
+We implemented features such as: check-out, check-in, and merge.
+The feature "check-out" forks the created repository.
+The "check-in" feature merges the check-out repository to the created repository.
+The "merge" feature [text here]
+We have extra features, such as printing working directory and listing files from the working directory.
 	
 	
 ## Team RNA members
@@ -24,13 +25,13 @@ Dom Feeley: feeley.dominik@csu.fullerton.edu
 ## External Requirements
 	required to have g++ that support and compile c++17.
 	required to have boost c++ libraries: date_time, filesystem, and system.
-
 ## Features
 	View current working directory
 	List out files in current working directory
 	Create a repository of "ptree"
 	Check-in
 	Check-out
+	Merge
 ## Contents
 	main.cpp
 	ptree (folder)
